@@ -13,11 +13,11 @@
 
     <style>
         :root {
-            --mint-bg: #f5fff9;       /* Light Pastel Mint Background */
-            --mint-card: #ffffff;     /* White for cards */
-            --mint-accent: #48b38d;   /* Primary Mint Green */
-            --mint-soft: #d1f2e6;     /* Light Green for hover/badges */
-            --text-main: #1d332c;     /* Deep Green-Black for text */
+            --mint-bg: #f5fff9;       
+            --mint-card: #ffffff;     
+            --mint-accent: #48b38d;   
+            --mint-soft: #d1f2e6;     
+            --text-main: #1d332c;     
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,7 +32,6 @@
 
         h1, h2, h3 { font-family: 'DM Serif Display', serif; }
 
-        /* Fixed Navigation */
         nav {
             position: fixed;
             top: 0; width: 100%;
@@ -58,18 +57,26 @@
             gap: 50px;
         }
 
-        .hero-content { flex: 1.2; }
-        .hero-content h1 { font-size: 5rem; line-height: 1; margin-bottom: 1.5rem; color: var(--text-main); }
-        .hero-content p { font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.8; max-width: 500px; }
+        .hero-content { flex: 1.5; }
+        
+        /* Single line name styling */
+        .hero-content h1 { 
+            font-size: 4.5rem; 
+            white-space: nowrap; 
+            margin-bottom: 1.5rem; 
+            color: var(--text-main); 
+        }
 
-        /* THE PILL PHOTO FRAME */
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.8; max-width: 600px; }
+
+        /* Pill Photo Container */
         .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
         
         .pill-frame {
-            width: 340px;
-            height: 480px;
+            width: 320px;
+            height: 460px;
             background: var(--mint-soft);
-            border-radius: 170px; /* Pill Shape */
+            border-radius: 160px; 
             overflow: hidden;
             border: 10px solid white;
             box-shadow: 0 30px 60px rgba(0,0,0,0.08);
@@ -85,19 +92,19 @@
 
         .badge {
             position: absolute;
-            bottom: 50px;
-            right: 0;
+            bottom: 40px;
+            right: -10px;
             background: white;
             padding: 12px 25px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             color: var(--mint-accent);
             border: 1px solid var(--mint-soft);
         }
 
-        /* Buttons & Options */
+        /* Buttons */
         .cta-button {
             padding: 16px 40px;
             background: var(--mint-accent);
@@ -105,30 +112,29 @@
             text-decoration: none;
             border-radius: 100px;
             font-weight: 700;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.4s;
             display: inline-block;
         }
 
         .cta-button:hover {
             background: var(--text-main);
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Skills/Connect Section */
-        .section-padding { padding: 100px 10%; }
+        .section-padding { padding: 80px 10%; }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             margin-top: 40px;
         }
 
         .card {
             background: var(--mint-card);
-            padding: 40px;
-            border-radius: 30px;
+            padding: 35px;
+            border-radius: 25px;
             text-align: center;
             text-decoration: none;
             color: var(--text-main);
@@ -139,17 +145,20 @@
         .card:hover {
             background: var(--mint-soft);
             border-color: var(--mint-accent);
-            transform: scale(1.02);
         }
 
-        .card i { font-size: 2.5rem; color: var(--mint-accent); margin-bottom: 15px; }
+        .card i { font-size: 2.2rem; color: var(--mint-accent); margin-bottom: 15px; }
 
-        /* Responsive Fixes */
-        @media (max-width: 1024px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
+        /* Responsive adjustments */
+        @media (max-width: 1100px) {
             .hero-content h1 { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
+            .hero-content h1 { font-size: 2.8rem; white-space: normal; } 
             .hero-content p { margin: 0 auto 2rem; }
-            .pill-frame { width: 280px; height: 400px; }
+            .pill-frame { width: 260px; height: 380px; }
         }
     </style>
 </head>
@@ -163,43 +172,40 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Varsha<br>Gireesh</h1>
+                <h1>Varsha Gireesh</h1>
                 <p>Engineering student crafting ideas into code | Tech enthusiast | Lifelong learner.</p>
-                <a href="#connect" class="cta-button">Explore My Work</a>
+                <a href="#connect" class="cta-button">My Social Links</a>
             </div>
             
             <div class="hero-image">
                 <div class="pill-frame">
-                    <img src="image.jfif" alt="Varsha Gireesh Profile Photo">
+                    <img src="image.jfif" alt="Varsha Gireesh Photo">
                 </div>
                 <div class="badge">CSE · AI Student</div>
             </div>
         </section>
 
         <section id="connect" class="section-padding">
-            <h2 style="text-align: center; font-size: 2.5rem;">My Social Links</h2>
+            <h2 style="text-align: center;">Let's Connect</h2>
             <div class="grid">
                 <a href="https://www.linkedin.com/in/varshagireesh07" class="card" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                     <h3>LinkedIn</h3>
-                    <p>Network & Career</p>
                 </a>
                 <a href="https://wa.me/918714719899" class="card" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                     <h3>WhatsApp</h3>
-                    <p>Instant Message</p>
                 </a>
                 <a href="https://instagram.com/varsha_09dec" class="card" target="_blank">
                     <i class="fab fa-instagram"></i>
                     <h3>Instagram</h3>
-                    <p>Daily Updates</p>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 60px; opacity: 0.5; font-size: 0.9rem;">
-        <p>© 2026 Varsha Gireesh | Built with Minty Fresh Code</p>
+    <footer style="text-align: center; padding: 40px; opacity: 0.5;">
+        <p>© 2026 Varsha Gireesh</p>
     </footer>
 
 </body>
